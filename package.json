@@ -1,0 +1,10 @@
+{
+  "name": "home-office-life",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node test/game.test.js",
+    "check": "node --check src/app.js && node --check src/game.js && node --check server.mjs"
+  }
+}

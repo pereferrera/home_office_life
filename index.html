@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#11151b">
+  <title>Home Office Life</title>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <div id="title-screen" class="title-screen">
+    <div class="title-card">
+      <p class="eyebrow">A small life behind a window</p>
+      <h1>Home Office<br><i>Life</i></h1>
+      <p class="lede">Ten years. One room. Thousands of small decisions.</p>
+      <div class="title-actions">
+        <button id="new-game" class="button primary">Begin a new life</button>
+        <button id="continue-game" class="button secondary" hidden>Continue</button>
+      </div>
+      <p class="fineprint">Your progress stays in this browser.</p>
+    </div>
+  </div>
+
+  <main id="game" hidden>
+    <header class="topbar">
+      <div class="wordmark"><span>HOME OFFICE</span><strong>LIFE</strong></div>
+      <div class="calendar">
+        <span id="season-icon">❋</span>
+        <div><strong id="date-label">Spring · Day 1</strong><small id="time-label">08:00 · Age 30</small></div>
+      </div>
+      <div class="top-actions">
+        <button id="sound-toggle" class="icon-button" aria-label="Toggle sound">♪</button>
+        <button id="pause-toggle" class="icon-button" aria-label="Pause game">Ⅱ</button>
+        <button id="menu-toggle" class="icon-button" aria-label="Open menu">☰</button>
+      </div>
+    </header>
+
+    <section class="stats" aria-label="Janus's status">
+      <div class="stat"><span>♥</span><div><label>Health <b id="health-value">82</b></label><meter id="health-meter" min="0" max="100"></meter></div></div>
+      <div class="stat"><span>ϟ</span><div><label>Energy <b id="energy-value">72</b></label><meter id="energy-meter" min="0" max="100"></meter></div></div>
+      <div class="stat"><span>☻</span><div><label>Mood <b id="mood-value">68</b></label><meter id="mood-meter" min="0" max="100"></meter></div></div>
+      <div class="money"><small>BALANCE</small><strong id="money-value">€1,000</strong></div>
+      <div class="job"><small>WORK</small><strong id="job-value">Employed</strong></div>
+    </section>
+
+    <section class="scene-shell">
+      <div id="scene" class="scene" aria-label="Janus's apartment">
+        <img class="room" src="./assets/apartment-v2.png" alt="A cozy pixel-art apartment with a bed, couch, window, kitchen, and desk">
+        <div class="sky" aria-hidden="true"></div>
+        <div id="light-filter" class="light-filter"></div>
+        <div id="weather" class="weather" aria-hidden="true"></div>
+        <div id="janus" class="janus" aria-label="Janus"></div>
+        <div id="condition-label" class="condition-label" role="status"></div>
+        <button class="hotspot bed" data-zone="bed"><span>Sleep & rest</span></button>
+        <button class="hotspot couch" data-zone="couch"><span>Unwind</span></button>
+        <button class="hotspot window" data-zone="window"><span>Look outside</span></button>
+        <button class="hotspot kitchen" data-zone="kitchen"><span>Cook & eat</span></button>
+        <button class="hotspot desk" data-zone="desk"><span>Work & explore</span></button>
+        <div id="world-event" class="world-event" role="status" aria-live="polite">
+          <div class="event-heading"><span id="event-kind">WORLD EVENT</span><strong id="event-title">A new day</strong></div>
+          <p id="event-message">You wake to the familiar hum of the apartment.</p>
+          <div id="event-deltas" class="event-deltas"></div>
+        </div>
+      </div>
+      <p class="scene-hint">Choose something in the apartment. Time keeps moving.</p>
+    </section>
+
+    <section class="lower-panel">
+      <div class="today"><div class="section-title"><span>YOUR HORIZON</span><small id="day-progress">Day 1 of 3,650</small></div><p>Keep Janus healthy, energized, solvent, and connected as the years pass.</p></div>
+      <div class="journal">
+        <div class="section-title"><span>LIFE SO FAR</span><button id="journal-toggle">Open journal</button></div>
+        <p id="latest-event">You wake to the familiar hum of the apartment.</p>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="action-dialog" class="modal">
+    <button class="close" data-close aria-label="Close">×</button>
+    <p id="action-kicker" class="eyebrow">THE KITCHEN</p>
+    <h2 id="action-title">What should Janus do?</h2>
+    <p id="action-copy" class="muted"></p>
+    <div id="action-list" class="action-list"></div>
+  </dialog>
+
+  <dialog id="journal-dialog" class="modal journal-modal">
+    <button class="close" data-close aria-label="Close">×</button>
+    <p class="eyebrow">LIFE SO FAR</p><h2>Janus's journal</h2>
+    <ol id="journal-list"></ol>
+  </dialog>
+
+  <dialog id="menu-dialog" class="modal compact">
+    <button class="close" data-close aria-label="Close">×</button>
+    <p class="eyebrow">PAUSED</p><h2>Make yourself at home</h2>
+    <label class="speed-label">Clock speed <select id="speed-select"><option value="1">Slow</option><option value="2" selected>Normal</option><option value="4">Very quick</option></select></label>
+    <button id="restart-game" class="button danger">Start over</button>
+  </dialog>
+
+  <dialog id="ending-dialog" class="modal ending" data-static>
+    <p id="ending-kicker" class="eyebrow">THE END</p><h2 id="ending-title"></h2><p id="ending-copy" class="muted"></p>
+    <button id="ending-restart" class="button primary">Live another life</button>
+  </dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
