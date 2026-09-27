@@ -4,6 +4,8 @@ Can you make the right decisions that will bring your life forward at the right 
 In this game, you will see how time goes by: night and day, seasons, all behind the window of your cozy 1-room apartment.
 You are Janus (a name of the Roman god of beginnings, transitions, time, and dualities), a solitary 30-year old man that has a home-office software engineering job, is single, can cook one or two dishes, plays music alone for fun, and has no life plan otherwise. The game will prompt you for decisions and you have to pick the right ones at the right time. These might bring your character into a healthier, happier state, make you earn more money, maybe even find a meaning in life and trascend it. Or it will make Janus crash: sleep poorly, become sick, potentially lose your job, not be able to pay rent and maybe even get kicked out of your only base: your apartment (Game Over).
 
+![image](home_office.png)
+
 ## The game
 
 Everything happens in a 90s-videogame looking cozy 1 room apartment with: a bed, a couch (with a guitar), a small kitchen area where you can drink coffee, prepare and eat a simple meal, a desktop from where you can connect to the Internet to work (or for other endeavours), and a big window that shows you life outside and how day/night and seasons go by.
